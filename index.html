@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FICHE D’INFORMATION</title>
+    <link rel="icon" href="/public/images/favicon.ico">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/public/css/jquery-ui.theme.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header__container">
+            <div class="logo">
+                <img class="logo__img" src="/public/images/logo.png" alt="">
+            </div>
+            <h1 class="foo">FICHE D’INFORMATION</h1>
+        </div>
+    </header>
+    
+    <h1 class="bar">FICHE D’INFORMATION</h1>
+    <div class="container">
+        <form action="/" class="form" method="post">
+            <div class="wrapper">
+                <div class="input-container">
+                    <label for="input-0" class="required">Quartier</label>
+                    <div class="select-container">
+                        <select class="input json quartier" name="quartier" id="input-0" required>
+                            <option value="" disabled hidden selected>Quartier</option>
+                            <option value="ABOBO-BAOULE">ABOBO-BAOULE</option>
+                            <option value="ABOBO-TE">ABOBO-TE</option>
+                            <option value="CLOUETCHA">CLOUETCHA</option>
+                            <option value="KENNEDY">KENNEDY</option>
+                            <option value="ANADOR">ANADOR</option>
+                            <option value="DERRIERE RAIL CELESTE">DERRIERE RAIL CELESTE</option>
+                            <option value="DERRIERE RAIL BOKABO">DERRIERE RAIL BOKABO</option>
+                            <option value="ABOBO BELLEVILLE">ABOBO BELLEVILLE</option>
+                            <option value="BIABOU">BIABOU</option>
+                            <option value="AKEIKOI">AKEIKOI</option>
+                            <option value="AVOCATIER">AVOCATIER</option>
+                            <option value="COLATIER">COLATIER</option>
+                            <option value="SOGEPHIA">SOGEPHIA</option>
+                            <option value="HABITAT">HABITAT</option>
+                            <option value="PLAQUE 1">PLAQUE 1</option>
+                            <option value="PLAQUE 2">PLAQUE 2</option>
+                            <option value="ILE VERTE">ILE VERTE</option>
+                            <option value="ABOBO CENTRE">ABOBO CENTRE</option>
+                            <option value="PK18">PK18</option>
+                            <option value="DERRIERE PONT">DERRIERE PONT</option>
+                            <option value="ANDOKOI">ANDOKOI</option>
+                            <option value="SODEPALM">SODEPALM</option>
+                            <option value="PLATEAU DOKUI">PLATEAU DOKUI</option>
+                            <option value="ABOBO SAGBE">ABOBO SAGBE</option>
+                            <option value="AGBEKOI">AGBEKOI</option>
+                            <option value="AGNISSANKRO">AGNISSANKRO</option>
+                            <option value="ADJIBI">ADJIBI</option>
+                            <option value="BANCO">BANCO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label class="required">Je suis:</label>
+                    <div class="radio-container">
+                        <input type="radio" class="input json radiocava" name="me" value="Benevole" id="volonter" required>
+                        <label for="volonter" class="radiocava">Benevole</label>
+                    </div>
+                    <div class="radio-container">
+                        <input type="radio" class="input json radiocava" name="me" value="Electeur" id="voter" required> 
+                        <label for="voter" class="radiocava">Electeur</label>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-1" class="required">Nom</label>
+                    <input type="text" placeholder="Nom de famille" class="input json surname" name="surname" id="input-1" required>
+                </div>
+                <div class="input-container">
+                    <label for="input-2" class="required">Prenom</label>
+                    <input type="text" placeholder="Nom et prenom" class="input json name" name="name" id="input-2" required>
+                </div>
+                <div class="input-container">
+                    <label for="input-3">Date de naissance</label>
+                    <input type="text" placeholder="Date de naissance" class="input json birthday" name="birthday" id="input-3">
+                </div>
+                <div class="input-container">
+                    <label for="input-4">Lieu de naissance</label>
+                    <input type="text" placeholder="Lieu de naissance" class="input json place" name="place" id="input-4">
+                </div>
+                <div class="input-container">
+                    <label for="input-5">Sexe</label>
+                    <div class="select-container">
+                        <select class="input json sexe" name="sexe" id="input-5">
+                            <option value="" disabled hidden selected>Sexe</option>
+                            <option value="Masculin">Masculin</option>
+                            <option value="Feminin">Feminin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-6" class="user required">Telephone</label>
+                    <input type="text" placeholder="Telephone 1" maxlength="16" class="input star json phone" name="phone" id="input-6" required>
+                </div>
+                <div class="input-container">
+                    <label for="input-7">Telephone</label>
+                    <input type="text" placeholder="Telephone 2" maxlength="16" class="input json phone" name="phone" id="input-7">
+                </div>
+                <div class="input-container">
+                    <label for="input-8" class="user required">Numero cni</label>
+                    <input type="text" placeholder="Numero cni" class="input star json id" name="ID" id="input-8" required>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="input-container">
+                    <label for="input-9" class="user required">Numero cei</label>
+                    <input type="text" placeholder="Numero cei" class="input star json card" name="card" id="input-9" required>
+                </div>
+                <div class="input-container">
+                    <label for="input-10">Bureau de vote</label>
+                    <input type="text" placeholder="Bureau de vote" class="input json bureau" name="bureau" id="input-10">
+                </div>
+                <div class="input-container">
+                    <label for="input-11">Profession</label>
+                    <div class="select-container">
+                        <select class="input json profession" name="profession" id="input-11">
+                            <option value="" disabled hidden selected>Profession</option>
+                            <option value="Fonctionnaire">Fonctionnaire</option>
+                            <option value="Entrepreneur">Entrepreneur</option>
+                            <option value="Commercant">Commercant</option>
+                            <option value="Transporteur">Transporteur</option>
+                            <option value="Planteur">Planteur</option>
+                            <option value="Informel">Informel</option>
+                            <option value="Eleve/etudiant">Eleve/etudiant</option>
+                            <option value="Regligieux">Regligieux</option>
+                            <option value="EmployeDeMaison">Employe de maison</option>
+                            <option value="EmployeDeCommerce">Employe de commerce</option>
+                            <option value="Commercial/e">Commercial/e</option>
+                            <option value="Manœuvre">Manœuvre</option>
+                            <option value="Ouvrier">Ouvrier</option>
+                            <option value="Sans profession">Sans profession</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-12" class="required">Affiliation politique</label>
+                    <div class="select-container">
+                        <select class="input json political" name="political" id="input-12" required>
+                            <option value="" disabled hidden selected>Affiliation politique</option>
+                            <option value="RDR">RDR</option>
+                            <option value="PDCI">PDCI</option>
+                            <option value="FPI">FPI</option>
+                            <option value="PIT">PIT</option>
+                            <option value="MFA">MFA</option>
+                            <option value="RHDP">RHDP</option>
+                            <option value="AUTRE">AUTRE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-13">Candidat prefere</label>
+                    <div class="select-container">
+                        <select class="input json candidat" name="candidat" id="input-13">
+                            <option value="" disabled hidden selected>Candidat prefere</option>
+                            <option value="HamedBakoyoko">Hamed Bakoyoko</option>
+                            <option value="AutreRhdp">Autre Rhdp</option>
+                            <option value="AutreRdr">Autre Rdr</option>
+                            <option value="Pdci">Pdci</option>
+                            <option value="Independant">Independant</option>
+                            <option value="Fpi/Lmp">Fpi/Lmp</option>
+                            <option value="Autre">Autre</option>
+                            <option value="Aucun">Aucun</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-14">Compte facebook</label>
+                    <input type="text" placeholder="Compte facebook" class="input json facebook" name="preferred" id="input-14">
+                </div>
+                <div class="input-container">
+                    <label for="input-15">Radio favorite</label>
+                    <div class="select-container">
+                        <select class="input json radio" name="radio" id="input-15">
+                            <option value="" disabled hidden selected>Candidat prefere</option>
+                            <option value="RTI Radio Côte d'Ivoire">RTI Radio Côte d'Ivoire</option>
+                            <option value="Radio Fréquence Vie">Radio Fréquence Vie</option>
+                            <option value="Radio N'goa">Radio N'goa</option>
+                            <option value="Radio ATM">Radio ATM</option>
+                            <option value="Africa N°1">Africa N°1</option>
+                            <option value="RTI Fréquence 2">RTI Fréquence 2</option>
+                            <option value="Radio Attécoubé">Radio Attécoubé</option>
+                            <option value="Radio Zénith FM">Radio Zénith FM</option>
+                            <option value="Hit Radio">Hit Radio</option>
+                            <option value="Radio Treichville">Radio Treichville</option>
+                            <option value="Radio Bien-être">Radio Bien-être</option>
+                            <option value="BBC Afrique">BBC Afrique</option>
+                            <option value="Vibe Radio">Vibe Radio</option>
+                            <option value="Trace FM">Trace FM</option>
+                            <option value="Radio Al Bayane">Radio Al Bayane</option>
+                            <option value="ONUCI FM">ONUCI FM</option>
+                            <option value="Radio Yopougon">Radio Yopougon</option>
+                            <option value="Radio Lepin">Radio Lepin</option>
+                            <option value="RFI Afrique">RFI Afrique</option>
+                            <option value="Radio Cocody FM">Radio Cocody FM</option>
+                            <option value="La Voix de l'Amérique">La Voix de l'Amérique</option>
+                            <option value="Radio Jam">Radio Jam</option>
+                            <option value="Radio Amitié">Radio Amitié</option>
+                            <option value="Radio BLM">Radio BLM</option>
+                            <option value="Radio Alobhé">Radio Alobhé</option>
+                            <option value="Nostalgie Côte d'Ivoire">Nostalgie Côte d'Ivoire</option>
+                            <option value="La Voix de l'Espérance">La Voix de l'Espérance</option>
+                            <option value="Radio Arc-en-Ciel">Radio Arc-en-Ciel</option>
+                            <option value="Radio Nationale Catholique">Radio Nationale Catholique</option>
+                            <option value="Radio Vatican">Radio Vatican</option>
+                            <option value="Radio Espoir">Radio Espoir</option>
+                            <option value="Radio Vatican">Radio Vatican</option>
+                            <option value="Ivoire FM">Ivoire FM</option>
+                            <option value="Radio Anyama">Radio Anyama</option>
+                            <option value="ISTC FM">ISTC FM</option>
+                            <option value="Radio Elit'">Radio Elit'</option>
+                            <option value="Bassam FM">Bassam FM</option>
+                            <option value="Radio Fatchué">Radio Fatchué</option>
+                            <option value="Radio Téré FM">Radio Téré FM</option>
+                            <option value="ADO FM">ADO FM</option>
+                            <option value="Radio City FM ">Radio City FM </option>
+                            <option value="Radio Bonne Santé">Radio Bonne Santé</option>
+                            <option value="Atlantique FM">Atlantique FM</option>
+                            <option value="La Voix de l'Amérique">La Voix de l'Amérique</option>
+                            <option value="ALPHA BLONDY">ALPHA BLONDY</option>
+                            <option value="AUTRE">AUTRE</option>
+                            <option value="AUCUN">AUCUN</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-16">Television favorite</label>
+                    <div class="select-container">
+                        <select class="input json television" name="television" id="input-16">
+                            <option value="" disabled hidden selected>Television favorite</option>
+                            <option value="RTI 1">RTI 1</option>
+                            <option value="RTI 2">RTI 2</option>
+                            <option value="RTI Music TV">RTI Music TV</option>
+                            <option value="RTI Sport TV">RTI Sport TV</option>
+                            <option value="Canal">Canal</option>
+                            <option value="DSTV">DSTV</option>
+                            <option value="AUTRE">AUTRE</option>
+                            <option value="AUCUN">AUCUN</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-17">Divertissement favori</label>
+                    <div class="select-container">
+                        <select class="input json enter" name="enter" id="input-17">
+                            <option value="" disabled hidden selected>Divertissement favori</option>
+                            <option value="Port">Port</option>
+                            <option value="Sorties">Sorties</option>
+                            <option value="Television">Television</option>
+                            <option value="Lecture">Lecture</option>
+                            <option value="Famille">Famille</option>
+                            <option value="Amis">Amis</option>
+                            <option value="Musique">Musique</option>
+                            <option value="Maquis">Maquis</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper last-wrapper">
+                <div class="input-container">
+                    <label for="input-18">Artiste favori</label>
+                    <div class="select-container">
+                        <select class="input json artist" name="artist" id="input-18">
+                            <option value="" disabled hidden selected>Artiste favori</option>
+                            <option value="SERGE BEYNAUD">SERGE BEYNAUD</option>
+                            <option value="ARAFAT">ARAFAT</option>
+                            <option value="KIFF NO BEAT">KIFF NO BEAT</option>
+                            <option value="DEBORDO">DEBORDO</option>
+                            <option value="SIDIKI DIABATE">SIDIKI DIABATE</option>
+                            <option value="ALPHA BLONDY">ALPHA BLONDY</option>
+                            <option value="CLAIRE BAILLY">CLAIRE BAILLY</option>
+                            <option value="ARIEL CHENEY">ARIEL CHENEY</option>
+                            <option value="MAGIC SYSTEM">MAGIC SYSTEM</option>
+                            <option value="SOUM BILL">SOUM BILL</option>
+                            <option value="TIKEN JAH">TIKEN JAH</option>
+                            <option value="MEIWAY">MEIWAY</option>
+                            <option value="REVOLUTION">REVOLUTION</option>
+                            <option value="MUSIQUE MANDINGUE">MUSIQUE MANDINGUE</option>
+                            <option value="CONGO">CONGO</option>
+                            <option value="SENEGAL">SENEGAL</option>
+                            <option value="NIGERIA">NIGERIA</option>
+                            <option value="CARAIBES">CARAIBES</option>
+                            <option value="HIP HOP RNB">HIP HOP RNB</option>
+                            <option value="AUTRE IVOIRIEN">AUTRE IVOIRIEN</option>
+                            <option value="AUTRE">AUTRE</option>
+                            <option value="AUCUN">AUCUN</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-19">Sportif favori</label>
+                    <div class="select-container">
+                        <select class="input json Sportif" name="Sportif" id="input-19">
+                            <option value="" disabled hidden selected>Sportif favori</option>
+                            <option value="FOOTBALL">FOOTBALL</option>
+                            <option value="ATHLETISME">ATHLETISME</option>
+                            <option value="BASKETBALL">BASKETBALL</option>
+                            <option value="BOXE">BOXE</option>
+                            <option value="TAE KWONDO">TAE KWONDO</option>
+                            <option value="HAND BALL">HAND BALL</option>
+                            <option value="CYCLISME">CYCLISME</option>
+                            <option value="RALLYE AUTO/MOTO">RALLYE AUTO/MOTO</option>
+                            <option value="MARATHON">MARATHON</option>
+                            <option value="AUTRE">AUTRE</option>
+                            <option value="AUCUN">AUCUN</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-20">Religion</label>
+                    <div class="select-container">
+                        <select class="input json religion" name="religion" id="input-20">
+                            <option value="" disabled hidden selected>Religion</option>
+                            <option value="Protestant/e">Protestant/e</option>
+                            <option value="Musulman/e">Musulman/e</option>
+                            <option value="Catholique">Catholique</option>
+                            <option value="Evangelique">Evangelique</option>
+                            <option value="Animiste">Animiste</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-21">Groupe ethnique</label>
+                    <div class="select-container">
+                        <select class="input json group" name="group" id="input-21">
+                            <option value="" disabled hidden selected>Groupe ethnique</option>
+                            <option value="BAOULE">BAOULE</option>
+                            <option value="AGNI">AGNI</option>
+                            <option value="AKIE">AKIE</option>
+                            <option value="ABBEY">ABBEY</option>
+                            <option value="ABRON">ABRON</option>
+                            <option value="ADJOUKROU">ADJOUKROU</option>
+                            <option value="EBRIE">EBRIE</option>
+                            <option value="NZIMA">NZIMA</option>
+                            <option value="ABOURE">ABOURE</option>
+                            <option value="ABIDJI">ABIDJI</option>
+                            <option value="ALLADJAN">ALLADJAN</option>
+                            <option value="AHIZI">AHIZI</option>
+                            <option value="BETE">BETE</option>
+                            <option value="GUERE">GUERE</option>
+                            <option value="DIDA">DIDA</option>
+                            <option value="WOBE">WOBE</option>
+                            <option value="YACOUBA">YACOUBA</option>
+                            <option value="MALINKE">MALINKE</option>
+                            <option value="DIOULA">DIOULA</option>
+                            <option value="MAHOU">MAHOU</option>
+                            <option value="KOYAKA">KOYAKA</option>
+                            <option value="SENOUFO">SENOUFO</option>
+                            <option value="GOURO">GOURO</option>
+                            <option value="KOULANGO">KOULANGO</option>
+                            <option value="LOBI">LOBI</option>
+                            <option value="TAGBANA">TAGBANA</option>
+                            <option value="DJIMI">DJIMI</option>
+                            <option value="AUTRE">AUTRE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-26">Photo</label>
+                    <input type="file" class="input photo" accept="image/*" name="photo" id="input-26">
+                </div>
+                <div class="input-container">
+                    <label for="input-22">Nom du pere</label>
+                    <input type="text" placeholder="Nom du pere" class="input json father" name="father" id="input-22">
+                </div>
+                <div class="input-container">
+                    <label for="input-23">Nom de la mere</label>
+                    <input type="text" placeholder="Nom de la mere" class="input json mother" name="mother" id="input-23">
+                </div>
+                <div class="input-container">
+                    <label for="input-24">Marital status</label>
+                    <div class="select-container">
+                        <select class="input json status" name="status" id="input-24">
+                            <option value="" disabled hidden selected>Marital status</option>
+                            <option value="Marie">Marie</option>
+                            <option value="Celibataire">Celibataire</option>
+                            <option value="Divorce/e">Divorce/e</option>
+                            <option value="Veuf/ve">Veuf/ve</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="input-25">Enfants</label>
+                    <div class="select-container">
+                        <select class="input json children" name="children" id="input-25">
+                            <option value="" disabled hidden selected>Quantité d'enfants</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-container">
+                <button type="submit" class="form__submit">Enregistrer <i class="fas fa-bookmark"></i></button>
+            </div>
+        </form>
+    </div>
+    <div class="console">
+        <div class="console-log">Les données ont été envoyées</div>
+    </div>
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/jquery-ui.min.js"></script>
+    <script src="/scripts/event.js"></script>
+</body>
+
+</html>
