@@ -52,9 +52,10 @@ $(document).ready(function() {
 
   $('.birthday').datepicker('option', $.datepicker.regional[ "fr" ]);
 
-  var imageFlaga = true;
+  var imageFlaga = true,
+      $form = $('form');
 
-  $('form').on('submit', function(event) {
+  $form.on('submit', function(event) {
   	event.preventDefault();
 
   	data = new FormData();
@@ -103,7 +104,6 @@ $(document).ready(function() {
     }
 
     console.log("The data has been sent");
-    
 
   	$.ajax({
       type: "POST",
@@ -114,6 +114,7 @@ $(document).ready(function() {
       success: function(data) {
         showConsole();
         setTimeout(hideConsole, 10000);
+        $form[0].reset();
       }
     });
   });
