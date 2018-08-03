@@ -1,8 +1,14 @@
 // content of index.js
 const express = require('express');
 const nodemailer = require('nodemailer');
+const pdfkit = require('pdfkit');
+const fs = require('fs');
+const TelegramBot = require('node-telegram-bot-api');
 
 const app = express();
+const PDFPath = 'public/pdf/';
+const token = 'BOT_TOKEN';
+const telegram = new TelegramBot(token, { polling: true });
 
 const multer = require('multer');
 const upload = multer({dest: 'public/images/photos/'});
@@ -15,8 +21,8 @@ var smtpTransport = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-      user: '', // User login
-      pass: '' // User password
+      user: '',
+      pass: ''
     },
     tls: {
         rejectUnauthorized: false
@@ -31,34 +37,61 @@ var mailOptions = {
 
 app.post('/', upload.single('Photo'), function(request, response) {
     const body = request.body;
-    if (!body) return response.sendStatus(400);    
+    if (!body) return response.sendStatus(400);
 
-    var letstry = '<ul>';
+    const FullName = `${body.Name} ${body.Surname}`;
+    const validName = FullName.replace(/\s/g, '');
+
+    var mailHTML = '<ul>',
+        PDFData = '';
+
     for (var key in body) {
-        letstry += '<li>' + key + ': ' + body[key] +'</li>';
+        mailHTML += '<li>' + key + ': ' + body[key] +'</li>';
+        PDFData += `${key}: ${body[key]}\n`;
     }
 
     const photo = request.file,
           mimeType = photo ? photo.mimetype.split('/')[1] : false;
 
+    var PDFPhoto = false;
+
     if (photo && ((mimeType == 'png' || mimeType == 'jpeg' || mimeType == 'gif'))) {
         mailOptions.attachments = [{
-            filename: body.Name + body.Surname +'.png',
+            filename: validName +'.png',
             path: photo.path,
             cid: photo.filename
-        }];   
-
-        letstry += '<li style="list-style-type: none">' + '<img src="cid:' + photo.filename + '" />' + '</li>';
+        }];
+        PDFPhoto = true;
+        mailHTML += '<li style="list-style-type: none">' + '<img src="cid:' + photo.filename + '" />' + '</li>';
     }
-    letstry += '</ul>';
-    mailOptions.html = letstry;
-    mailOptions.subject = `${body.Name} ${body.Surname}, Form Submit`;
+    mailHTML += '</ul>';
+    mailOptions.html = mailHTML;
+    mailOptions.subject = `${body.Name} ${body.Surname}, `;
 
-    // console.log(letstry);
-    
+    var pdf = new pdfkit;
+    var PDFFile = PDFPath + validName + '.pdf';
+
+    var writeStream = fs.createWriteStream(PDFFile);
+    pdf.pipe(writeStream);
+    pdf.fontSize(32);
+    pdf.text(FullName);
+    pdf.fontSize(14);
+    pdf.moveDown();
+    pdf.text(PDFData);
+    if (PDFPhoto) {
+      pdf.image(photo.path);
+    }
+    pdf.end();
+    writeStream.on('finish', () => {
+      const fileOptions = {
+        filename: FullName,
+        contentType: 'application/pdf',
+      };
+      telegram.sendDocument('chat_id', PDFFile);
+    });
+
     smtpTransport.sendMail(mailOptions, function(error, info) {
-        if (error) return console.log(error);
-
+        if (error) { return console.log(error) }
         console.log('Message %s sent: %s', info.messageId, info.response);
         smtpTransport.close();
     });
@@ -66,4 +99,4 @@ app.post('/', upload.single('Photo'), function(request, response) {
     response.send(body);
 });
 
-app.listen(80);
+app.listen(3000);

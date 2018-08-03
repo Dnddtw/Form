@@ -34,10 +34,10 @@ $(document).ready(function() {
         $this.prop('required', true);
       }
     });
-    
+
     if ($('.user.required').length === 0) {
       $required.addClass('required');
-    } 
+    }
 
   });
 
@@ -114,7 +114,7 @@ $(document).ready(function() {
       success: function(data) {
         showConsole();
         setTimeout(hideConsole, 10000);
-        $form[0].reset();
+        // $form[0].reset();
       }
     });
   });
