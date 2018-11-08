@@ -17,12 +17,12 @@
     <header>
         <div class="container header__container">
             <div class="logo">
-                <img class="logo__img" src="/public/images/logo.png" alt="">
+                <a href="/"><img class="logo__img" src="/public/images/logo.png" alt=""></a>
             </div>
             <h1 class="foo">FICHE D’INFORMATION</h1>
         </div>
     </header>
-    
+
     <h1 class="bar">FICHE D’INFORMATION</h1>
     <div class="container">
         <form action="/" class="form" method="post">
@@ -70,7 +70,7 @@
                         <label for="volonter" class="radiocava">Benevole</label>
                     </div>
                     <div class="radio-container">
-                        <input type="radio" class="input json radiocava" name="me" value="Electeur" id="voter" required> 
+                        <input type="radio" class="input json radiocava" name="me" value="Electeur" id="voter" required>
                         <label for="voter" class="radiocava">Electeur</label>
                     </div>
                 </div>
@@ -108,12 +108,12 @@
                     <label for="input-7">Telephone</label>
                     <input type="text" placeholder="Telephone 2" maxlength="16" class="input json phone" name="phone" id="input-7">
                 </div>
+            </div>
+            <div class="wrapper">
                 <div class="input-container">
                     <label for="input-8" class="user required">Numero cni</label>
                     <input type="text" placeholder="Numero cni" class="input star json id" name="ID" id="input-8" required>
                 </div>
-            </div>
-            <div class="wrapper">
                 <div class="input-container">
                     <label for="input-9" class="user required">Numero cei</label>
                     <input type="text" placeholder="Numero cei" class="input star json card" name="card" id="input-9" required>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="input-container">
                     <label for="input-14">Compte facebook</label>
-                    <input type="text" placeholder="Compte facebook" class="input json facebook" name="preferred" id="input-14">
+                    <input type="text" placeholder="Compte facebook" class="input json facebook" name="facebook" id="input-14">
                 </div>
                 <div class="input-container">
                     <label for="input-15">Radio favorite</label>
@@ -424,16 +424,16 @@
                 </div>
             </div>
             <div class="submit-container">
-                <button type="submit" class="form__submit">Enregistrer <i class="fas fa-bookmark"></i></button>
+                <button type="submit" class="form__submit"><i class="fas fa-bookmark"></i> Enregistrer</button>
             </div>
         </form>
     </div>
-    <div class="console">
+    <div class="console console-info">
         <div class="console-log">Les données ont été envoyées</div>
     </div>
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/scripts/jquery-ui.min.js"></script>
-    <script src="/scripts/event.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../scripts/event.js"></script>
 </body>
 
 </html>

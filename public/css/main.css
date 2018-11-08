@@ -1,3 +1,7 @@
+html, body {
+    width: 100%;
+}
+
 body {
     color: #fff;
     background: linear-gradient(-90deg, #89253e, #3a6186);
@@ -5,6 +9,10 @@ body {
     /*-webkit-animation: Gradient 30s ease infinite;
     -moz-animation: Gradient 30s ease infinite;
     animation: Gradient 30s ease infinite;*/
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 * {
@@ -62,18 +70,19 @@ h1 {
     line-height: 1;
     float: right;
     line-height: 100px;
+    font-weight: bold;
 }
 
 header {
     margin-bottom: 80px;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.92);
     box-shadow: 0 0 55px 5px rgba(255, 255, 255, 0.5);
     border-color: #f9f9f9;
 }
 
 .conatainer::before, .container::after { content: ''; display: block; clear: both; }
 
-.header__container { 
+.header__container {
     padding: 15px 65px;
 }
 
@@ -166,7 +175,7 @@ label {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    transition: all 0.4s linear;
+    transition: all 0.2s linear;
     cursor: pointer;
 }
 
@@ -189,7 +198,7 @@ label {
 
 .fa-bookmark {
     font-size: 15px;
-    margin-left: 5px;
+    margin-right: 5px;
     display: inline-block;
 }
 
@@ -250,7 +259,7 @@ select.input::-ms-expand {
     color: #aaa;
 }
 
-.console, .console-log {
+.console {
     display: none;
     position: fixed;
     left: 0;
@@ -263,17 +272,22 @@ select.input::-ms-expand {
 }
 
 .console-log {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
     display: block;
     border: 1px solid #1af;
     border-radius: 5px;
     background-color: #f9f9f9;
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 28px;
     color: #333;
     padding: 40px;
     width: 320px;
-    max-height: 100px;
     text-align: center;
     cursor: default;
+    transform: translate(-50%, -50%);
 }
 
 .bar { display: none; }
@@ -305,7 +319,7 @@ select.input::-ms-expand {
 
     .foo { display: none; }
     .bar { display: block; }
-    
+
     .logo { float: none; text-align: center; }
 
     .submit-container {

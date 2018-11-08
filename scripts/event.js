@@ -97,10 +97,13 @@ $(document).ready(function() {
 
     function hideConsole() {
       $console.fadeOut('slow');
+      $('body').removeClass('no-scroll')
     }
 
     function showConsole() {
       $console.fadeIn('slow');
+
+      $('body').addClass('no-scroll')
     }
 
     console.log("The data has been sent");
@@ -114,7 +117,11 @@ $(document).ready(function() {
       success: function(data) {
         showConsole();
         setTimeout(hideConsole, 10000);
+        console.log(data);
         // $form[0].reset();
+      },
+      error: function(error) {
+        console.log(error);
       }
     });
   });
